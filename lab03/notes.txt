@@ -1,0 +1,68 @@
+This lab is over front end and back end HTML, CSS, JS
+
+HTML defines structure of web page, kind of like a hierarchial tree
+
+common syntax of html tag:
+
+<tag attrib="value">
+	<child_tag></child_tag>
+</tag>
+or
+<tag attrib="value">
+
+<html></html> - root note, surrounds whole file
+<head></head> - surrounds metadata
+<title></title> - defines title of the page (on browser tab)
+<body></body> - surrounds content of page
+<img src="path" attrib2="value"> - loads an image
+	- path can be path to file locally or URL external
+	- can specity width, height, border, etc
+<a></a> - anchor, defines a clickable link
+	- ex. <a href="http://www.link.com">link</a>
+<p></p> - surrounds paragraph
+<h1></h1> - heading
+	- # can go up to 6
+<br> - line break
+
+
+
+
+Javascript is used to make your page interactive and dynamic
+
+usually front end, back end can be enabled by NodejS
+loaded with <script src="fdjklfdakjsfda.js"> Additional code </script>
+Various frameworks and libraries
+- Angular
+- React
+- Vue
+- jQuery (library)
+
+Can be trigered by events, such as onlcick, onmouseover, etc
+	- example: in html we can say <button onclick="myFunc()">
+Javascript can be used to manipulate HTML elements	
+	- ex. we have <button id="clickMe">
+	var myButton = document.getElementById("clickMe");
+
+
+
+
+CSS is used to style web page, controlling how it should appear
+Basic syntax:
+	selector1, selector2, selector3 {
+		style-attrib1: value;
+		style-attrib2: value;
+	}
+Selector can be:
+- element selector such as p, h1, img, etc
+- id selector such as #elementId1
+- Class selector such as .class1
+- combination of the above
+can be loaded into html by using:
+<link href="myStyle.css" rel="stylesheet" type="text/css">
+Notable library is Boostrap for responsive web page (contains CSS and JS)
+CSS can also be used as an inline attribute
+
+manipulating using JS
+var myParagraph = document.getElementById("pulpFictionMeme");
+myParagraph.style.color = "red";
+	- jQuery makes this easier
