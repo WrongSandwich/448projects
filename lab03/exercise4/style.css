@@ -1,6 +1,36 @@
 p {
-  background-color: lightblue;
   border-color: black;
   border-width: thin;
   border: solid;
+}
+
+label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 100px;
+  text-align: left;
+}
+
+.category {
+  font-weight: bold;
+}
+
+input {
+  display: inline-block;
+  float: left;
+}
+
+h1, h3 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+
+}
+
+html {
+  background-color: rgb(50, 50, 55);
+  color: tan;
+  font-family: 'Open Sans', sans-serif;
 }
