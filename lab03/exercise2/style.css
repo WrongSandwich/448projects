@@ -4,29 +4,27 @@ p {
   border: solid;
 }
 
-label {
+img {
+  display: block;
+  height: 300px;
+  width: 300px;
+}
+
+button {
   display: inline-block;
   float: left;
-  clear: left;
-  width: 100px;
-  text-align: left;
+  width: 150px;
+  text-align: center;
+  background: rgb(40,40,45);
+  border-color: tan;
+  color: tan;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  font-size: 16px;
 }
 
-.category {
-  font-weight: bold;
-}
-
-input {
-  display: inline-block;
-  float: left;
-}
-
-h1, h3 {
+h1 {
   font-family: 'Quicksand', sans-serif;
-}
-
-body {
-
 }
 
 html {
