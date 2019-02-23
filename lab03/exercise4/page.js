@@ -10,5 +10,15 @@ function editCSS() {
   let backgroundBlue = document.getElementById("backgroundBlue").value;
   let newBackgroundColor = "rgb(" + backgroundRed + ", " + backgroundGreen + ", " + backgroundBlue + ")";
   document.getElementById("fuck").style.backgroundColor = newBackgroundColor;
+  //Base font color on background color; //(r * 0.299) + (g * 0.587) + (b * 0.114)) > 186
+  if ((Number(backgroundRed)*0.299) + (Number(backgroundGreen)*0.587) + (Number(backgroundBlue)*0.114) <= 150)
+  {
+    console.log("tan");
+    document.getElementById("fuck").style.color = "tan";
+  }
+  else {
+    console.log("black");
+    document.getElementById("fuck").style.color = "black";
+  }
   return(false); //Why tf do i have to return false for this to work
 }
