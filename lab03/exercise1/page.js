@@ -10,6 +10,6 @@ function compare() {
     alert("ERROR: Passwords must be at least 8 characters long.");
   }
   else {
-    alert("congraterladins");
+    alert("Passwords match");
   }
 }
