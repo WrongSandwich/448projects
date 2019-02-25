@@ -1,5 +1,4 @@
 function editCSS() {
-  //still need to handle bad input
   let borderRed = document.getElementById("borderRed").value;
   let borderGreen = document.getElementById("borderGreen").value;
   let borderBlue = document.getElementById("borderBlue").value;
