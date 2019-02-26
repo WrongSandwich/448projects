@@ -1,27 +1,3 @@
-p {
-  border-color: black;
-  border-width: thin;
-  border: solid;
-}
-
-label {
-  display: inline-block;
-  float: left;
-  clear: left;
-  width: 150px;
-  text-align: left;
-}
-
-input {
-  display: inline-block;
-  float: left;
-}
-
-h1 {
-  font-family: 'Quicksand', sans-serif;
-}
-
-
 html {
   background-color: rgb(50, 50, 55);
   color: tan;

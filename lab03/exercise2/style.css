@@ -33,3 +33,23 @@ html {
   color: tan;
   font-family: 'Open Sans', sans-serif;
 }
+
+/* unvisited link */
+a:link {
+  color: tan;
+}
+
+/* visited link */
+a:visited {
+  color: tan;
+}
+
+/* mouse over link */
+a:hover {
+  color: tan;
+}
+
+/* selected link */
+a:active {
+  color: tan;
+}

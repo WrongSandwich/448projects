@@ -11,7 +11,7 @@ function editCSS() {
   }
   else {
     let newBorderColor = "rgb(" + borderRed + ", " + borderGreen + ", " + borderBlue + ")";
-    document.getElementById("fuck").style.borderColor = newBorderColor;
+    document.getElementById("darth").style.borderColor = newBorderColor;
   }
   let backgroundRed = document.getElementById("backgroundRed").value;
   let backgroundGreen = document.getElementById("backgroundGreen").value;
@@ -25,14 +25,14 @@ function editCSS() {
   }
   else {
     let newBackgroundColor = "rgb(" + backgroundRed + ", " + backgroundGreen + ", " + backgroundBlue + ")";
-    document.getElementById("fuck").style.backgroundColor = newBackgroundColor;
+    document.getElementById("darth").style.backgroundColor = newBackgroundColor;
     //Base font color on background color; //(r * 0.299) + (g * 0.587) + (b * 0.114)) > 186
     if ((Number(backgroundRed)*0.299) + (Number(backgroundGreen)*0.587) + (Number(backgroundBlue)*0.114) <= 150)
     {
-      document.getElementById("fuck").style.color = "tan";
+      document.getElementById("darth").style.color = "tan";
     }
     else {
-      document.getElementById("fuck").style.color = "black";
+      document.getElementById("darth").style.color = "black";
     }
   }
   return(false); //Why tf do i have to return false for this to work

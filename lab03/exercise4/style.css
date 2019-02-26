@@ -1,4 +1,4 @@
-p {
+#darth {
   border-color: black;
   border-width: thin;
   border: solid;
@@ -49,5 +49,25 @@ input {
   float: left;
   background: rgb(80, 80, 80);
   border-color: tan;
+  color: tan;
+}
+
+/* unvisited link */
+a:link {
+  color: tan;
+}
+
+/* visited link */
+a:visited {
+  color: tan;
+}
+
+/* mouse over link */
+a:hover {
+  color: tan;
+}
+
+/* selected link */
+a:active {
   color: tan;
 }
