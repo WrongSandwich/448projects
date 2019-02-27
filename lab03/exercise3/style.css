@@ -45,6 +45,7 @@ h2 {
   font-size: 30px;
   font-weight: normal;
   text-align: left;
+  background-image: linear-gradient(rgb(190, 190, 255), rgb(230, 230, 255));
 }
 
 .header {
@@ -57,6 +58,15 @@ h2 {
   grid-row: 2 / 4;
   vertical-align: middle;
   background-color: rgb(230, 230, 255);
+  overflow: hidden;
+}
+
+#profilePic {
+  transition: transform 10s;
+}
+
+#profilePic:hover {
+  transform: scale(3);
 }
 
 .info {
