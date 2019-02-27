@@ -13,6 +13,16 @@ function editCSS() {
     let newBorderColor = "rgb(" + borderRed + ", " + borderGreen + ", " + borderBlue + ")";
     document.getElementById("darth").style.borderColor = newBorderColor;
   }
+  let newBorderThickness = document.getElementById("borderThick").value;
+  if (borderThick < 0)
+  {
+    alert("Please enter a non-negative border thickness");
+  }
+  else
+  {
+    borderThick = newBorderThickness + "px";
+    document.getElementById("darth").style.borderWidth = borderThick;
+  }
   let backgroundRed = document.getElementById("backgroundRed").value;
   let backgroundGreen = document.getElementById("backgroundGreen").value;
   let backgroundBlue = document.getElementById("backgroundBlue").value;
