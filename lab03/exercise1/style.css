@@ -47,3 +47,24 @@ a:hover {
 a:active {
   color: tan;
 }
+
+button {
+  display: inline-block;
+  float: left;
+  width: 150px;
+  text-align: center;;
+  background: rgb(40, 40, 45);
+  border-color: tan;
+  color: tan;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input {
+  font-family: 'Open Sans', sans-serif;
+  float: left;
+  background: rgb(80, 80, 80);
+  border-color: tan;
+  color: tan;
+}
