@@ -1,0 +1,50 @@
+Web Langauges part 2: back end languages
+Server side languages:
+- PHP
+- Ruby (Ruby on Rails Framework)
+- Javascript (NodeJS Runtime Engine, various frameworks)
+- Python
+- Java
+- Perl
+Database server languages:
+- MySQL
+- Others
+
+Web server software:
+- handles HTTP requests and responses, as well as other protocols
+- can serve static or dynamic resources
+	- dynamic: running server-side scripts
+- most support server-side scripting langugaes ex. PHP, Perl
+Examples of web servers:
+- apache
+- nginx
+- google web server
+
+PHP
+- popular for web dev
+- Syntax is similar to C++, Java
+	- variables are declared as "$variableName = value"
+	- variables are dynamically typed
+- can echo HTML and can be included in HTML
+
+Basic Front-End Back-End: Form Validation
+HTML form collects user inputs:
+<form action="backend.php" method="post" onsubmit="return Validate()">
+	Name: <input type="text" name="name"><br>
+	E-mail: <input type="text name="email"><br>
+	<input type="submit">
+</form>
+Validate() validates inputs, return true or false
+Accessing inputs in PHP:
+	<?php
+		$name = $_POST["name"]
+		$email = $_POST["email"]
+	?>
+
+HTTP
+foundation of WWW
+Stateless communication, client-server protocol
+POST = create resources
+GET = retrieve resources
+PUT = update resources (or create if does not exist)
+DELETE = delete resources
