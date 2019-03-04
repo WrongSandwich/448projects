@@ -21,9 +21,4 @@ function formChecker() {
     alert("Please enter only nonnegative quantities");
     return false;
   }
-  //check that username is in form of email address
-
-
-
-  return true;
 }

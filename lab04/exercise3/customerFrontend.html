@@ -1,32 +1,39 @@
 <html>
   <head>
     <title>Dunder Mifflin Paper Company</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-    <h1>Dunder Mifflin Paper Company</h1>
-    <h3>Online Store</h3>
-    <form action="customerBackend.php" method="post" onsubmit="return formChecker()" autocomplete="off">
-      <div class="cart">
-        <label>White Copy Paper, Single Ream<br><b>$4</b></label>
-        <input type="number" id="whiteReam" required><br><br>
-        <label>White Copy Paper, Case of 10 Reams<br><b>$35</b></label>
-        <input type="number" id="whiteCase" required><br><br>
-        <label>White Card Stock, Single Ream<br><b>$7</b></label>
-        <input type="number" id="cardReam" required><br><br><br>
+    <div class="container">
+      <div class="header">
+        <img src="images/dunderMifflin.png"></img>
+        <h1>Online Store</h1>
       </div>
-      <div class="profile">
-        <label>Email: </label>
-        <input type="email" id="email" required><br>
-        <label>Password: </label>
-        <input type="text" id="password" required><br>
-      </div>
-      <div class="shipping">
-        <input type="radio" name="ship" value="free" checked>Free 7-day<br>
-        <input type="radio" name="ship" value="threeDay">$5 3-day<br>
-        <input type="radio" name="ship" value="overnight">$50 overnight<br><br>
-      </div>
-      <button type="submit" value="Submit">Submit</button>
-      <button type="reset" value="Reset">Reset</button>
-    </form>
+      <form action="customerBackend.php" method="post" onsubmit="return formChecker()" autocomplete="off">
+        <div class="cart">
+          <label>White Copy Paper, Single Ream<br><b>$4</b></label>
+          <input type="number" name="whiteReam" required><br><br>
+          <label>White Copy Paper, Case of 10 Reams<br><b>$35</b></label>
+          <input type="number" name="whiteCase" required><br><br>
+          <label>White Card Stock, Single Ream<br><b>$7</b></label>
+          <input type="number" name="cardReam" required><br><br><br>
+        </div>
+        <div class="profile">
+          <label>Email: </label>
+          <input type="email" name="email" required><br>
+          <label>Password: </label>
+          <input type="text" name="password" required><br>
+        </div>
+        <div class="shipping">
+          <input type="radio" name="ship" value="Free" checked>Free 7-day<br>
+          <input type="radio" name="ship" value="3-Day">$5 3-day<br>
+          <input type="radio" name="ship" value="Overnight">$50 overnight<br><br>
+        </div>
+        <button type="submit" value="Submit">Submit</button>
+        <button type="reset" value="Reset">Reset</button>
+      </form>
+    </div>
   </body>
 </html>

@@ -20,20 +20,23 @@ $whiteCase = $_POST["whiteCase"];
 $cardReam = $_POST["cardReam"];
 $ship = $_POST["ship"];
 
-$whiteReamCost = itemCost($whiteReam, 4);
-$whiteCaseCost = itemCost($whiteCase, 35);
-$cardReamCost = itemCost($cardReam, 7);
+$whiteReamCost = itemCost($whiteReam, 4.00);
+$whiteCaseCost = itemCost($whiteCase, 35.00);
+$cardReamCost = itemCost($cardReam, 7.00);
 
-if ($ship == "free") {
-  $shipCost = 0;
+if ($ship == "Free") {
+  $shipCost = 0.00;
 }
-else if ($ship == "threeDay") {
-  $shipCost = 5;
+else if ($ship == "3-Day") {
+  $shipCost = 5.00;
 }
-else if ($ship == "overnight") {
-  $shipCost = 50;
+else if ($ship == "Overnight") {
+  $shipCost = 50.00;
 }
 
+
+echo "<html><head><link href='style.css' type='text/css' rel='stylesheet'";
+echo "</head><body>";
 echo "<p>Thanks for shopping with Dunder Mifflin!<br>";
 echo "Your email: " . $username . "<br>";
 echo "Your password: " . $password . "<br><br><br>";
@@ -42,16 +45,16 @@ echo "<table><tr><th></th><th>Quantity</th><th>Cost per item</th>";
 echo "<th>Sub Total</th></tr>";
 echo "<tr><th>White Copy Paper, Single Ream</th>";
 echo "<td>" . $whiteReam . "</td><td>$4.00</td>";
-echo "<td>" . $whiteReamCost . "</td></tr>";
-echo "<tr><th>White Copy Paper, Case of 10 Reams</th>";
+echo "<td>$" . $whiteReamCost . ".00</td></tr>";
+echo "<tr><th>White Copy Paper, 10 Ream Case</th>";
 echo "<td>" . $whiteCase . "</td><td>$35.00</td>";
-echo "<td>" . $whiteCaseCost . "</td></tr>";
+echo "<td>$" . $whiteCaseCost . ".00</td></tr>";
 echo "<tr><th>Card Stock, Single Ream</th>";
 echo "<td>" . $cardReam . "</td><td>$7.00</td>";
-echo "<td>" . $cardReamCost . "</td></tr>";
-echo "<tr><th>Shipping</td><td>" . $ship . "</td><td>" . $shipCost . "</td></tr>";
+echo "<td>$" . $cardReamCost . ".00</td></tr>";
+echo "<tr><th>Shipping</td><td colspan='2'>" . $ship . "</td><td>$" . $shipCost . ".00</td></tr>";
 echo "<tr><th>Total Cost</th>";
-echo "<th>" . totalCost($whiteReamCost, $whiteCaseCost, $cardReamCost, $shipCost) . "</th>";
-echo "</tr></table>";
+echo "<th colspan='3'>$" . totalCost($whiteReamCost, $whiteCaseCost, $cardReamCost, $shipCost) . ".00</th>";
+echo "</tr></table></body></html>";
 
  ?>

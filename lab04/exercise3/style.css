@@ -1,5 +1,51 @@
 table, th, td {
-  border: 1px solid black;
-  width: 40px;
-  table-layout: fixed;
+  border: 1px solid darkblue;
+}
+
+html {
+  font-family: Open Sans, 'Helvetica', 'Arial', sans-serif;
+  color: darkblue;
+}
+
+img { /* height = 121 width = 300 */
+
+  float: left;
+  padding: 37px;
+  padding-right: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.header {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  background-color: darkblue;
+  color: white;
+}
+
+.cart {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.profile {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.shipping {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+label {
+}
+
+h1 {
+  font-size: 75px;
 }
