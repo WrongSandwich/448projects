@@ -13,7 +13,7 @@ function totalCost($w, $x, $y, $z) {
   return $total;
 }
 
-$username = $_POST["username"];
+$username = $_POST["email"];
 $password = $_POST["password"];
 $whiteReam = $_POST["whiteReam"];
 $whiteCase = $_POST["whiteCase"];
@@ -35,7 +35,7 @@ else if ($ship == "overnight") {
 }
 
 echo "<p>Thanks for shopping with Dunder Mifflin!<br>";
-echo "Your username: " . $username . "<br>";
+echo "Your email: " . $username . "<br>";
 echo "Your password: " . $password . "<br><br><br>";
 echo "Order summary:<br><br>";
 echo "<table><tr><th></th><th>Quantity</th><th>Cost per item</th>";
