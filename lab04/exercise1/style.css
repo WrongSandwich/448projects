@@ -3,3 +3,9 @@ table, th, td {
   width: 40px;
   table-layout: fixed;
 }
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  background-color: black;
+  color: green;
+}
