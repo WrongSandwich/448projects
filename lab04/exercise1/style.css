@@ -1,11 +1,11 @@
 table, th, td {
-  border: 1px solid black;
-  width: 40px;
+  border: 1px solid green;
+  width: 50px;
   table-layout: fixed;
+  color: green;
 }
 
 html {
   font-family: 'Open Sans', sans-serif;
   background-color: black;
-  color: green;
 }
