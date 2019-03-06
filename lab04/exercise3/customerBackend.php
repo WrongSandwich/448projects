@@ -37,7 +37,8 @@ else if ($ship == "Overnight") {
 
 echo "<html><head><link href='style.css' type='text/css' rel='stylesheet'";
 echo "</head><body>";
-echo "<p>Thanks for shopping with Dunder Mifflin!<br>";
+echo "<div class='container'><div class='header'><img src='images/dunderMifflin.png'></img><h1>Online Store</h1></div>";
+echo "</div><p>Thanks for shopping with Dunder Mifflin!<br>";
 echo "Your email: " . $username . "<br>";
 echo "Your password: " . $password . "<br><br><br>";
 echo "Order summary:<br><br>";
@@ -55,6 +56,7 @@ echo "<td>$" . $cardReamCost . ".00</td></tr>";
 echo "<tr><th>Shipping</td><td colspan='2'>" . $ship . "</td><td>$" . $shipCost . ".00</td></tr>";
 echo "<tr><th>Total Cost</th>";
 echo "<th colspan='3'>$" . totalCost($whiteReamCost, $whiteCaseCost, $cardReamCost, $shipCost) . ".00</th>";
-echo "</tr></table></body></html>";
+echo "</tr></table><br><a href='customerFrontend.html'>Return</a></body></html>";
+
 
  ?>

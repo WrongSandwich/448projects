@@ -43,9 +43,28 @@ img { /* height = 121 width = 300 */
   grid-row: 2 / 3;
 }
 
-label {
-}
-
 h1 {
   font-size: 75px;
 }
+
+.proLabel {
+  width: 100px;
+}
+
+label {
+  float: left;
+  width: 35px;
+}
+
+button {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  background: rgb(230, 230, 255);
+  border-color: darkblue;
+  color: darkblue;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  font-size: 16px;
+}
+

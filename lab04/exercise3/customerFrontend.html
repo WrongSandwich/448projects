@@ -13,19 +13,19 @@
       </div>
       <form action="customerBackend.php" method="post" onsubmit="return formChecker()" autocomplete="off">
         <div class="cart">
-          <label>White Copy Paper, Single Ream<br><b>$4</b></label>
+          White Copy Paper, Single Ream<br><label><b>$4</b></label>
           <input type="number" name="whiteReam" required><br><br>
-          <label>White Copy Paper, Case of 10 Reams<br><b>$35</b></label>
+          White Copy Paper, Case of 10 Reams<br><label><b>$35</b></label>
           <input type="number" name="whiteCase" required><br><br>
-          <label>White Card Stock, Single Ream<br><b>$7</b></label>
+          White Card Stock, Single Ream<br><label><b>$7</b></label>
           <input type="number" name="cardReam" required><br><br><br>
         </div>
         <div class="profile">
-          <label>Email: </label>
+          <label class="proLabel">Email: </label>
           <input type="email" name="email" required><br>
-          <label>Password: </label>
+          <label class="proLabel">Password: </label>
           <input type="text" name="password" required><br>
-        </div>
+        </div><br>
         <div class="shipping">
           <input type="radio" name="ship" value="Free" checked>Free 7-day<br>
           <input type="radio" name="ship" value="3-Day">$5 3-day<br>
@@ -33,6 +33,7 @@
         </div>
         <button type="submit" value="Submit">Submit</button>
         <button type="reset" value="Reset">Reset</button>
+        <br><br><a href="../../index.html">Return</a>
       </form>
     </div>
   </body>
