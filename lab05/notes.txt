@@ -1,0 +1,48 @@
+MYSQL NOTES
+
+DataBase Management System (DBMS)
+- Software system that manages interaction with database
+- Allows for creation and manipulation of database and structure
+- Allows for retrieval and access of information
+- MySQL is a popular DBMS
+
+Type of DBMS (Architecture): Client-Server
+- most widely used
+- separate dbms server process manages the database
+- client accesses by sending requests to DBMS server
+- this is what MySQL is
+
+Types of DBMS: Serverless
+- aka in-process DBMS
+- no separate server, databases are saved as files
+- usually used in embedded systems and smartphones
+
+Types of DBMS (Structure): Relational
+- use relational model for the data
+- data organized as tables containing rows and columns
+- a table represents an entity type
+- a row represents a record
+- a column represents an attribute value of the entity
+- most relational databases uses SQL
+  - SQL is Structured Query Language, used for managing data in RDBMS
+
+Types of DBMS (Structure): Non-Relational
+- data organized in various ways, ex: key-value store, document-based store, column-based store, graph-based store
+- rising in popularity due to Web 2.0 and big data
+- more flexibility
+
+MySQL
+- relational client-server DBMS
+
+mysql -h <hostname> -u <username> -p
+- use mysql.eecs.ku.edu as hostname
+- use your username as username
+USE <database_name>
+- use your username as the database name
+  - this is a mySQL shell command, use \h for list of options
+  - cannot be used in PHP
+
+Additional concepts
+Primary key: unique key for each record in a table
+Foreign key: primary key in another table references in current table
+Not Null: Value must be not null for the specified column
