@@ -15,7 +15,12 @@ if(!empty($checklist)) {
   echo "You selected " . $N . " posts for deletion.<br>";
   for($i = 0; $i < $N; $i++)
   {
-    echo $checklist[$i] . "<br>";
+    $query = "DELETE FROM Posts WHERE Post_id = '" . $checklist[$i] . "'";
+    if ($result = $mysqli->query($query)) {
+      echo $checklist[$i] . "<br>";
+    } else {
+      echo "Unable to delete post " . $checklist[$i] . "<br>";
+    }
   }
 }
 
