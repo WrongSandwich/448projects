@@ -10,17 +10,12 @@ if ($mysqli->connect_errno) {
   exit();
 }
 
-$query = "SELECT User_id FROM Users WHERE User_id = '$username'";
+$query = "INSERT INTO Users (User_id) VALUES ('" . $username . "')";
 
-if ($result = $mysqli->query($query)) {
-  echo '<script language="javascript">';
-  echo 'alert("ERROR: User already exists")';
-  echo '</script>';
-}
-else {
-  $query = "INSERT INTO Users (User_id) VALUES ('$username')";
-  $mysqli->query($query);
-  echo '<p>User successfully created!</p>';
+if ($mysqli->query($query) === TRUE) {
+  echo "User created successfully!";
+} else {
+  echo "Error: User already exists.";
 }
 
 $mysqli->close();
