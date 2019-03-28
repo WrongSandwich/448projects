@@ -25,7 +25,7 @@
           $Content = $row["Content"];
           echo "<tr><td>" . $Post_id . "</td><td>" . $Author_id . "</td>";
           echo "<td>" . $Content . "</td>";
-          echo '<td><input type="checkbox" name="' . $Post_id . '">&nbsp;</td></tr>';
+          echo '<td><input type="checkbox" name ="postForm[]" value="' . $Post_id . '">&nbsp;</td></tr>';
         }
         echo "</tr></table>";
         $posts->free();
