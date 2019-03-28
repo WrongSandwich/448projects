@@ -19,7 +19,7 @@ if ($result = $mysqli->query($query)) {
 }
 else {
   $query = "INSERT INTO Users (User_id) VALUES ('$username')";
-  $mysqli->query($query));
+  $mysqli->query($query);
   echo '<p>User successfully created!</p>';
 }
 
