@@ -11,19 +11,23 @@ if ($mysqli->connect_errno) {
   exit();
 }
 
-$query = "SELECT User_id FROM Users WHERE User_id = '$username'";
+/*Check if username already exists*/
+$query = "SELECT * FROM Users WHERE User_id = '$username'";
+$search = $mysqli->query($query);
 
-if (!$result = $mysqli->query($query)) {
-  echo '<script language="javascript">';
-  echo 'alert("ERROR: User does not exist")';
-  echo '</script>';
+if (mysqli_num_rows($search) > 0) {
+  /*User exists! Continue normally*/
+  $newPost = "INSERT INTO Posts (Content, Author_id) VALUES ('$content', '$username')";
+  $result = $mysqli->query($newPost);
+  if ($result === TRUE) {
+    echo "Post created successfully!";
+  } else {
+    echo "Error: Post unsuccessful.";
+  }
+} else {
+  echo "Error: User does not exist!";
 }
-else {
-  $query = "INSERT INTO Posts (Content, Author_id) VALUES ('$content', '$username')";
-  $mysqli->query($query);
-  echo '<p>Post successfully created!</p>';
-}
 
-
+$mysqli->close();
 
 ?>
