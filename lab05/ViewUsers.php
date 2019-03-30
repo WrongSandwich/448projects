@@ -10,12 +10,14 @@ if ($mysqli->connect_errno) {
 
 $query = "SELECT * FROM Users";
 if ($roster = $mysqli->query($query)) {
-  echo "<h1>List of Users</h1><br>";
+  echo '<html><head><link href="style.css" type="text/css"rel="stylesheet">';
+  echo '</head><body><h1>List of Users</h1><br>';
   /* fetch associative array */
   while ($row = $roster->fetch_assoc()) {
     $username = $row["User_id"];
     echo $username . "<br>";
   }
+  echo '</body></head></html>';
 }
 
 $mysqli->close();

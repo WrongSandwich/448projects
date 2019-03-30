@@ -9,7 +9,8 @@ if ($mysqli->connect_errno) {
 }
 
 $username = $_POST["user"];
-echo "<b>List of Posts</b><br><br>";
+echo '<html><head><link href="style.css" type="text/css" rel="stylesheet"></head>';
+echo "<body><b>List of Posts</b><br><br>";
 echo $username;
 echo "<br><br>";
 
