@@ -1,0 +1,53 @@
+//Lab 6 Notes - VueJS
+
+NodeJS - Allows running JS in both Server-side and Client-side code
+	- However JS did ot have modules, so CommonJS and ES6 modules were developed
+
+More common practice: use JSON API for interaction between server and client
+- client sends HTTP request passing JSON
+- Server sends JSON reply
+- request is asynchronous so it does not block the program execution
+
+- want client-side code to be reactive
+- page should change dynamically without needing to redirect to other URLs
+- easily scalable
+
+JS Framework
+- frameworks define an entire application design, often introducing new paradigms or new ways to approach our app development
+- libraries just have functions we can call
+
+VueJS
+- lightweight alternative to AngularJS
+- alternative to AngularJS and ReactJS
+
+
+
+
+
+
+Vue App
+- HTML:
+<div id="app">
+	{{ messgae }}
+</div>
+- Vue:
+var app = new Vue({
+	el: '#app', //where you want appp to run
+	data: {
+		message: 'Hello Vue!'
+	} //data variables
+	methods: ... //methods defined
+	computer: ... //dynamic variable? Like it changes I guess, actually needs to be computer
+	watch: ... //callback function that triggers when targtted data changes
+	created:
+})
+
+v-bind = to bind the value of thTML attribute to the vue js data variable
+v-if = conditionally render HTMl element
+v-for = to render HTML DOM element in loop
+<div id="app-4">
+  <ol> <li v-for="todo in todos"> {{todo.text}} </li> </ol>
+</div>
+v-on = to call event handler function when that event fires
+- ex. v-on:click="reverseMessage"
+v-model = to bind VueJS data variable and HTML input variable
