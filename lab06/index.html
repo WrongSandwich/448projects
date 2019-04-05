@@ -20,20 +20,9 @@
   </div>
   <div class="container">
     <div id="app">
-      Message: {{ message }}
-    </div>
-    <br><br>
-    <div id="app-2">
+      <input v-model.number="numStops" type="number">
       <ol>
-        <li v-for="todo in todos">
-          {{ todo.text }}
-        </li>
-      </ol>
-    </div>
-    <br><br>
-    <div id="app-3">
-      <ol>
-        <li v-for="stop in stops">
+        <li v-for="stop in stops" :key="stop.id">
           {{ stop.name }}
         </li>
       </ol>
@@ -54,28 +43,12 @@
     const app = new Vue({
       el: '#app',
       data: {
-        message: 'Hello Vue!'
-      }
-    })
-  </script>
-  <script>
-    const app2 = new Vue({
-      el: '#app-2',
-      data: {
-        todos: [
-          { text: 'Finish this lab' },
-          { text: 'Pass this class' },
-          { text: 'Get a degree' },
-          { text: 'Pursue world domination' }
-        ]
-      }
-    })
-  </script>
-  <script>
-    const app3 = new Vue({
-      el: '#app-3',
-      data: {
-        stops: []
+        stops: [],
+        numStops: 10
+      },
+      computed: {
+        filteredStops: function() {
+          return this.stops.slice(0, numStops) }
       },
       mounted: function () {
         fetch('https://utils.pauliankline.com/stops.json')
@@ -83,7 +56,7 @@
             return response.json();
           })
           .then(function (myJson) {
-            app3.stops = myJson;
+            app.stops = myJson;
           });
       }
     })
