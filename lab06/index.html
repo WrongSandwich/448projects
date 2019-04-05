@@ -21,11 +21,16 @@
   <div class="container">
     <div id="app">
       <input v-model.number="numStops" type="number">
-      <ol>
-        <li v-for="stop in stops" :key="stop.id">
-          {{ stop.name }}
+      <ul style="list-style-type:none;">
+        <li v-for="stop in filteredStops" :key="stop.id">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ stop.name }}</h5>
+              <p class="card-text">{{ stop.description }}</p>
+            </div>
+          </div>
         </li>
-      </ol>
+      </ul>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -47,8 +52,9 @@
         numStops: 10
       },
       computed: {
-        filteredStops: function() {
-          return this.stops.slice(0, numStops) }
+        filteredStops: function () {
+          return this.stops.slice(0, this.numStops)
+        }
       },
       mounted: function () {
         fetch('https://utils.pauliankline.com/stops.json')
