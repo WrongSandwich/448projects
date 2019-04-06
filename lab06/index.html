@@ -21,12 +21,15 @@
   <div class="container">
     <div id="app">
       <input v-model.number="numStops" type="number">
+      <h3>{{ userLat }}</h3>
+      <h3>{{ userLong }}</h3>
       <ul style="list-style-type:none;">
         <li v-for="stop in filteredStops" :key="stop.id">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">{{ stop.name }}</h5>
-              <p class="card-text">{{ stop.description }}</p>
+              <p class="card-text">{{ stop.description }}<br>
+              {{ stop.distance }}</p>
             </div>
           </div>
         </li>
@@ -49,7 +52,30 @@
       el: '#app',
       data: {
         stops: [],
-        numStops: 10
+        numStops: 10,
+        userLat: 0,
+        userLong: 0
+      },
+      methods: {
+        geolocation() {
+          navigator.geolocation.watchPosition(this.updateCoordinates)
+        },
+        updateCoordinates(position) {
+          this.userLat = position.coords.latitude;
+          this.userLong = position.coords.longitude;
+          for (stop in this.stops) {
+            stop.distance = this.calcDistance(stop.lat, stop.lon, this.userLat, this.userLong);
+          }
+        },
+        calcDistance(stopLat, stopLong, uLat, uLong) {
+          //Equirectangular aporximation
+          //https://www.movable-type.co.uk/scripts/latlong.html
+          var R = 6371e3; // metres
+          let x = (uLong - stopLong) * Math.cos((stopLat + uLat) / 2);
+          let y = (uLat - stopLat);
+          let d = Math.sqrt(x * x + y * y) * R;
+          return d;
+        }
       },
       computed: {
         filteredStops: function () {
@@ -64,6 +90,7 @@
           .then(function (myJson) {
             app.stops = myJson;
           });
+          this.geolocation();
       }
     })
   </script>
