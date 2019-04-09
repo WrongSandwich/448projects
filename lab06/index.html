@@ -29,7 +29,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ stop.name }}</h5>
               <p class="card-text">{{ stop.description }}<br>
-              {{ stop.distance }}</p>
+              Distance: {{ stop.distance }} km</p>
             </div>
           </div>
         </li>
@@ -81,12 +81,13 @@
           let y = (uLat - stopLat);
           let d = Math.sqrt(x * x + y * y) * R / 1000;
           console.log(d);
-          return d;
+          return d.toFixed(2);
         }
       },
       computed: {
         filteredStops: function () {
-          return this.stops.slice(0, this.numStops)
+          this.stops.sort(function(a, b) {return a.distance - b.distance});
+          return this.stops.slice(0, this.numStops);
         }
       },
       mounted: function () {
