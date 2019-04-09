@@ -63,8 +63,14 @@
         updateCoordinates(position) {
           this.userLat = position.coords.latitude;
           this.userLong = position.coords.longitude;
-          for (stop in this.stops) {
-            stop.distance = this.calcDistance(stop.lat, stop.lon, this.userLat, this.userLong);
+          this.updateDistance();
+        },
+        updateDistance() {
+          let i = 0;
+          for (i = 0; i < this.stops.length; i++) {
+            let a = this.stops[i].lat;
+            let b = this.stops[i].lon;
+            this.stops[i].distance = this.calcDistance(a, b, this.userLat, this.userLong);
           }
         },
         calcDistance(stopLat, stopLong, uLat, uLong) {
@@ -73,7 +79,8 @@
           var R = 6371e3; // metres
           let x = (uLong - stopLong) * Math.cos((stopLat + uLat) / 2);
           let y = (uLat - stopLat);
-          let d = Math.sqrt(x * x + y * y) * R;
+          let d = Math.sqrt(x * x + y * y) * R / 1000;
+          console.log(d);
           return d;
         }
       },
