@@ -9,15 +9,19 @@
 class TestSuite 
 {
 private:
-    const int testSize;
     int testIndex;
 public:
-    TestSuite(int size); //Constructor
+    TestSuite(); //Constructor
     void startSuite(); //Begin testing suite
     void printResult(bool testPassed) const;
     void printTestDesc(std::string testDesc);
     void printVector(const std::vector<int>& vect) const;
-    bool test1();
+    //EMPTY LIST TESTS
+    void test1();
+    void test2();
+    void test3();
+    void test4();
+    void test5();
     //bool is sorted ascending and descending?
     //Need a random generator for list?
 };
