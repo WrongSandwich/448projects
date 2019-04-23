@@ -52,7 +52,7 @@ bool TestSuite::test1()
     LinkedListOfInts list;
     bool testPassed = false;
 
-    if (list.size == 0)
+    if (list.size() == 0)
     {
         testPassed = true;
     }
