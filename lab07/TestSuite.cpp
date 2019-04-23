@@ -151,7 +151,7 @@ void TestSuite::test6()
     LinkedListOfInts list;
     bool testPassed = false;
 
-    list.addBack(34);
+    list.addBack(22);
     if (list.size() == 1)
     {
         testPassed = true;
@@ -211,69 +211,306 @@ void TestSuite::test9()
 void TestSuite::test10()
 {
     printTestDesc("size will be 3 after 3 addBack");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    for (int i = 0; i < 3; i++)
+    {
+        list.addBack(i);
+    }
+
+    if (list.size() == 3)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test11()
 {
     printTestDesc("size will be 3 after 3 addFront");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    for (int i = 0; i < 3; i++)
+    {
+        list.addFront(i);
+    }
+
+    if (list.size() == 3)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test12()
 {
     printTestDesc("isEmpty returns true after addBack of 1");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    list.addBack(22);
+    if (list.isEmpty() == false)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test13()
 {
     printTestDesc("isEmpty returns true after addFront of 1");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    list.addFront(34);
+    if (list.isEmpty() == false)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test14()
 {
     printTestDesc("search returns true for a value in a populated list");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+
+    if (list.search(34) == true)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test15()
 {
     printTestDesc("search returns false for a value not in a populated list");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+
+    if (list.search(7) == false)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test16()
 {
     printTestDesc("removeBack returns true on populated list");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+
+    if (list.removeBack() == true)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test17()
 {
     printTestDesc("removeFront returns true on populated list");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+
+    if (list.removeFront() == true)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test18()
 {
     printTestDesc("removeBack reduces size by 1 on populated list");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+    list.removeBack();
+
+    if (list.size() == 4)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test19()
 {
     printTestDesc("removeFront reduces size by 1 on populated list");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+    list.removeFront();
+
+    if (list.size() == 4)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test20()
 {
     printTestDesc("removeBack actually removes the last entry of a list");
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+    //11, 34, 6, 22, 13
+    list.removeBack();
+    std::vector<int> vec = list.toVector();
+    std::vector<int> key;
+    key.push_back(11);
+    key.push_back(34);
+    key.push_back(6);
+    key.push_back(22);
+
+    if (vec == key)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test21()
 {
     printTestDesc("removeFront actually removes the first entry of a list");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+    //11, 34, 6, 22, 13
+    list.removeFront();
+    std::vector<int> vec = list.toVector();
+    std::vector<int> key;
+    key.push_back(34);
+    key.push_back(6);
+    key.push_back(22);
+    key.push_back(13);
+
+    if (vec == key)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test22()
 {
     printTestDesc("multiple removeBack calls adjusts size correctly");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+    for (int i = 0; i < 3; i++)
+    {
+        list.removeBack();
+    }
+
+    if (list.size() == 2)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
 
 void TestSuite::test23()
 {
     printTestDesc("multiple removeFront calls adjust size correctly");
+
+        LinkedListOfInts list;
+    bool testPassed = false;
+    
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+    for (int i = 0; i < 3; i++)
+    {
+        list.removeFront();
+    }
+
+    if (list.size() == 2)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
 }
