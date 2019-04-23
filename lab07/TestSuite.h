@@ -15,7 +15,7 @@ public:
     TestSuite(int size); //Constructor
     void startSuite(); //Begin testing suite
     void printResult(bool testPassed) const;
-    void printTestMessage(std::string testDesc);
+    void printTestDesc(std::string testDesc);
     void printVector(const std::vector<int>& vect) const;
     bool test1();
     //bool is sorted ascending and descending?
