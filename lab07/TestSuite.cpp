@@ -603,8 +603,66 @@ void TestSuite::test28()
     list.addFront(11);
     list.addBack(13);
     //11, 34, 6, 22, 13
-    std::vector<int> vec = list.toVector();
-    std::vector<int> key;
+    vector<int> vec = list.toVector();
+    vector<int> key;
+    key.push_back(11);
+    key.push_back(34);
+    key.push_back(6);
+    key.push_back(22);
+    key.push_back(13);
+
+    if (vec == key)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
+}
+
+void TestSuite::test29()
+{
+    printTestDesc("addBack actually creates the specified list");
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    list.addBack(11);
+    list.addBack(34);
+    list.addBack(6);
+    list.addBack(22);
+    list.addBack(13);
+    //11, 34, 6, 22, 13
+    vector<int> vec = list.toVector();
+    vector<int> key;
+    
+    key.push_back(11);
+    key.push_back(34);
+    key.push_back(6);
+    key.push_back(22);
+    key.push_back(13);
+
+    if (vec == key)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
+}
+
+void TestSuite::test30()
+{
+    printTestDesc("addFront actually creates the specified list");
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    list.addFront(11);
+    list.addFront(34);
+    list.addFront(6);
+    list.addFront(22);
+    list.addFront(13);
+    //11, 34, 6, 22, 13
+    vector<int> vec = list.toVector();
+    vector<int> key;
+    
     key.push_back(11);
     key.push_back(34);
     key.push_back(6);

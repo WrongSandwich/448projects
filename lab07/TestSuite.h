@@ -46,5 +46,7 @@ public:
     void test26();
     void test27();
     void test28();
+    void test29();
+    void test30();
 };
 #endif
