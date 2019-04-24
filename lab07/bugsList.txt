@@ -1,17 +1,15 @@
-All empty list checks work
+Author: Evan Trout
 
-Size returns for both addBack and addFront are correct
+List of Bugs:
+- addBack and addFront need to check precondition before accepting a value
+  - currently add w/ an invalid value messes up an entire list
+- isEmpty does not work, always returns true even with a populated list
+  - this is also messing up the removeFront and removeBack functions,
+    as they start by checking isEmpty and return false if isEmpty is true 
 
-addBack and addFront with invalid values affects the value of size, but not the
-return from isEmpty
-However isEmpty seems to always return true...
+////////////////////////////////////////////////////////////////////////////
 
-All removeBack and removeFront calls are returning false, which would imply
-that the list is empty. This would make sense considering isEmpty returns true
-even after one or more add calls.
-
-Search is working correctly for a value in a populated list, so the list is being
-successfully populated.
+Test Results & Interpretation
 
 Test 1: size of an empty list is zero: PASSED
 Test 2: isEmpty returns true for empty list: PASSED
@@ -82,9 +80,17 @@ Test 28: addBack & addFront actually creates the specified list: FAILED
 - honestly it seems more likely that I'm not using vectors correctly than that
   the add values aren't working
 
+Test 29: addBack actually creates the specified list: FAILED
+Test 30: addFront actually creates the specified list: PASSED
+- addFront is working as intended, but addBack is not. This likely is the reason
+  that test 28 is not passing
 
-List of Bugs:
-- addBack and addFront need to check precondition before accepting an addBack
-  - should only add if it is a valid int
-  - it may be rejecting the value but still incrementing size
-- isEmpty does not work at all, always returns true
+Test 31: addBack functions like addFront?: PASSED
+- this explains the result of test 29: addBack is adding items to the front of
+  the list, instead of the back
+
+Test 32: multiple addFront w/ an invalid value still creates correct list: FAILED
+- addBack w/ invalid value actually attempts to add the value, rather than just 
+  incorrectly incrementing size. This changes my conclusions from test 8, 9, 24, & 25
+
+
