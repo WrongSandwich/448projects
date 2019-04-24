@@ -72,6 +72,8 @@ void TestSuite::startSuite()
     test26();
     test27();
     test28();
+    test29();
+    test30();
 }
 
 void TestSuite::test1()
@@ -654,11 +656,11 @@ void TestSuite::test30()
     LinkedListOfInts list;
     bool testPassed = false;
 
-    list.addFront(11);
-    list.addFront(34);
-    list.addFront(6);
-    list.addFront(22);
     list.addFront(13);
+    list.addFront(22);
+    list.addFront(6);
+    list.addFront(34);
+    list.addFront(11);
     //11, 34, 6, 22, 13
     vector<int> vec = list.toVector();
     vector<int> key;
