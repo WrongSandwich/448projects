@@ -67,6 +67,11 @@ void TestSuite::startSuite()
     test21();
     test22();
     test23();
+    test24();
+    test25();
+    test26();
+    test27();
+    test28();
 }
 
 void TestSuite::test1()
@@ -147,7 +152,7 @@ void TestSuite::test5()
 void TestSuite::test6()
 {
     printTestDesc("size will be 1 after addBack of 1");
-    
+
     LinkedListOfInts list;
     bool testPassed = false;
 
@@ -178,7 +183,7 @@ void TestSuite::test7()
 
 void TestSuite::test8()
 {
-    printTestDesc("addBack will reject invalid value");
+    printTestDesc("addBack with invalid value will not affect size");
 
     LinkedListOfInts list;
     bool testPassed = false;
@@ -194,7 +199,7 @@ void TestSuite::test8()
 
 void TestSuite::test9()
 {
-    printTestDesc("addFront will reject invalid value");
+    printTestDesc("addFront with invalid value will not affect size");
 
     LinkedListOfInts list;
     bool testPassed = false;
@@ -250,12 +255,13 @@ void TestSuite::test11()
 
 void TestSuite::test12()
 {
-    printTestDesc("isEmpty returns true after addBack of 1");
+    printTestDesc("isEmpty returns false after addBack of 1");
 
     LinkedListOfInts list;
     bool testPassed = false;
 
     list.addBack(22);
+    list.addBack(6);
     if (list.isEmpty() == false)
     {
         testPassed = true;
@@ -266,7 +272,7 @@ void TestSuite::test12()
 
 void TestSuite::test13()
 {
-    printTestDesc("isEmpty returns true after addFront of 1");
+    printTestDesc("isEmpty returns false after addFront of 1");
 
     LinkedListOfInts list;
     bool testPassed = false;
@@ -286,13 +292,13 @@ void TestSuite::test14()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
     list.addFront(11);
     list.addBack(13);
-
+    //11, 34, 6, 22, 13
     if (list.search(34) == true)
     {
         testPassed = true;
@@ -307,7 +313,7 @@ void TestSuite::test15()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -328,7 +334,7 @@ void TestSuite::test16()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -349,7 +355,7 @@ void TestSuite::test17()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -370,7 +376,7 @@ void TestSuite::test18()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -392,7 +398,7 @@ void TestSuite::test19()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -413,7 +419,7 @@ void TestSuite::test20()
     printTestDesc("removeBack actually removes the last entry of a list");
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -442,7 +448,7 @@ void TestSuite::test21()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -471,7 +477,7 @@ void TestSuite::test22()
 
     LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -496,7 +502,7 @@ void TestSuite::test23()
 
         LinkedListOfInts list;
     bool testPassed = false;
-    
+
     list.addBack(6);
     list.addFront(34);
     list.addBack(22);
@@ -508,6 +514,104 @@ void TestSuite::test23()
     }
 
     if (list.size() == 2)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
+}
+
+void TestSuite::test24()
+{
+  printTestDesc("multiple addBack calls with different types only accepts ints");
+
+  LinkedListOfInts list;
+  bool testPassed = false;
+
+  list.addBack(34);
+  list.addBack(6);
+  list.addBack('a');
+
+  if (list.size() == 2)
+  {
+    testPassed = true;
+  }
+
+  printResult(testPassed);
+}
+
+void TestSuite::test25()
+{
+  printTestDesc("multiple addFront calls with different types only accepts ints");
+
+  LinkedListOfInts list;
+  bool testPassed = false;
+
+  list.addFront(34);
+  list.addFront(6);
+  list.addFront('a');
+
+  if (list.size() == 2)
+  {
+    testPassed = true;
+  }
+
+  printResult(testPassed);
+}
+
+void TestSuite::test26()
+{
+    printTestDesc("addBack with invalid value will not affect isEmpty");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    list.addBack('a');
+    if (list.isEmpty() == true)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
+}
+
+void TestSuite::test27()
+{
+    printTestDesc("addFront with invalid value will not affect isEmpty");
+
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    list.addFront('a');
+    if (list.isEmpty() == true)
+    {
+        testPassed = true;
+    }
+
+    printResult(testPassed);
+}
+
+void TestSuite::test28()
+{
+    printTestDesc("addBack & addFront actually creates the specified list");
+    LinkedListOfInts list;
+    bool testPassed = false;
+
+    list.addBack(6);
+    list.addFront(34);
+    list.addBack(22);
+    list.addFront(11);
+    list.addBack(13);
+    //11, 34, 6, 22, 13
+    std::vector<int> vec = list.toVector();
+    std::vector<int> key;
+    key.push_back(11);
+    key.push_back(34);
+    key.push_back(6);
+    key.push_back(22);
+    key.push_back(13);
+
+    if (vec == key)
     {
         testPassed = true;
     }

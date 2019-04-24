@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 
-class TestSuite 
+class TestSuite
 {
 private:
     int testIndex;
@@ -41,5 +41,10 @@ public:
     void test21();
     void test22();
     void test23();
+    void test24();
+    void test25();
+    void test26();
+    void test27();
+    void test28();
 };
 #endif
