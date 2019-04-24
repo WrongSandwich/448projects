@@ -48,5 +48,6 @@ public:
     void test28();
     void test29();
     void test30();
+    void test31();
 };
 #endif
