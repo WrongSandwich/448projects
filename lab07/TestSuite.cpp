@@ -1,3 +1,10 @@
+/**
+*	@author Evan Trout
+*	@date 4/24/19
+*	@file TestSuite.cpp
+*	@brief Implementation for TestSuite, which tests LinkedListOfInts
+*/
+
 #include "TestSuite.h"
 #include "LinkedListOfInts.h"
 #include <iostream>
@@ -23,20 +30,6 @@ void TestSuite::printTestDesc(string testDesc)
 {
     testIndex++;
     cout << "Test " << testIndex << ": " << testDesc << ": ";
-}
-
-void TestSuite::printVector(const vector<int>& vect) const
-{
-    cout << "[";
-    for(unsigned int i=0; i<vect.size(); i++)
-    {
-        cout << vect[i];
-        if(i < (vect.size()-1))
-        {
-            cout << ",";
-        }
-    }
-    cout << "]";
 }
 
 void TestSuite::startSuite()
@@ -78,8 +71,12 @@ void TestSuite::startSuite()
     test32();
 }
 
+//////////////////////////
+//// EMPTY LIST TESTS ////
+//////////////////////////
+
 void TestSuite::test1()
-{   //Confirms that LinkedList constructor creates an empty list with size 0
+{ 
     printTestDesc("size of an empty list is zero");
 
     LinkedListOfInts list;
@@ -152,6 +149,10 @@ void TestSuite::test5()
 
     printResult(testPassed);
 }
+
+//////////////////////////
+// NON-EMPTY LIST TESTS //
+//////////////////////////
 
 void TestSuite::test6()
 {
@@ -431,8 +432,8 @@ void TestSuite::test20()
     list.addBack(13);
     //11, 34, 6, 22, 13
     list.removeBack();
-    std::vector<int> vec = list.toVector();
-    std::vector<int> key;
+    vector<int> vec = list.toVector();
+    vector<int> key;
     key.push_back(11);
     key.push_back(34);
     key.push_back(6);
@@ -460,8 +461,8 @@ void TestSuite::test21()
     list.addBack(13);
     //11, 34, 6, 22, 13
     list.removeFront();
-    std::vector<int> vec = list.toVector();
-    std::vector<int> key;
+    vector<int> vec = list.toVector();
+    vector<int> key;
     key.push_back(34);
     key.push_back(6);
     key.push_back(22);
