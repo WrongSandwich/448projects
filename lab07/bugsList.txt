@@ -1,0 +1,90 @@
+All empty list checks work
+
+Size returns for both addBack and addFront are correct
+
+addBack and addFront with invalid values affects the value of size, but not the
+return from isEmpty
+However isEmpty seems to always return true...
+
+All removeBack and removeFront calls are returning false, which would imply
+that the list is empty. This would make sense considering isEmpty returns true
+even after one or more add calls.
+
+Search is working correctly for a value in a populated list, so the list is being
+successfully populated.
+
+Test 1: size of an empty list is zero: PASSED
+Test 2: isEmpty returns true for empty list: PASSED
+Test 3: search returns false for empty list: PASSED
+Test 4: removeBack returns false for empty list: PASSED
+Test 5: removeFront returns false for empty list: PASSED
+- all empty list tests are passed
+
+Test 6: size will be 1 after addBack of 1: PASSED
+Test 7: size will be 1 after addFront of 1: PASSED
+- add methods correctly increment size
+
+Test 8: addBack with invalid value will not affect size: FAILED
+Test 9: addFront with invalid value will not affect size: FAILED
+- add methods are incrementing size even though the values should be rejected
+  - probably set to increment size before checking precondition
+
+Test 10: size will be 3 after 3 addBack: PASSED
+Test 11: size will be 3 after 3 addFront: PASSED
+- add methods correctly increment size with multiple calls
+
+Test 12: isEmpty returns false after addBack of 1: FAILED
+Test 13: isEmpty returns false after addFront of 1: FAILED
+- isEmpty not working properly after single calls for add methods
+  - likely means isEmpty does not work properly
+
+Test 14: search returns true for a value in a populated list: PASSED
+- list is being populated successfully with add methods
+- search is working as intended
+
+Test 15: search returns false for a value not in a populated list: PASSED
+- search is working as intended
+
+Test 16: removeBack returns true on populated list: FAILED
+Test 17: removeFront returns true on populated list: FAILED
+- remove methods returning false, which implies an empty list
+  - remove methods might be based on return from isEmpty, which would explain
+    this return
+  - also possible that remove methods are just written incorrectly
+
+Test 18: removeBack reduces size by 1 on populated list: FAILED
+Test 19: removeFront reduces size by 1 on populated list: FAILED
+- remove methods also not affecting size, but this is likely functioning correctly
+  if it thinks that the list is empty
+
+Test 20: removeBack actually removes the last entry of a list: FAILED
+Test 21: removeFront actually removes the first entry of a list: FAILED
+- remove methods not actually removing, but this is likely functioning correctly
+  if it thinks that the list is empty
+- also possible that I'm just using vectors incorrectly
+
+Test 22: multiple removeBack calls adjusts size correctly: FAILED
+Test 23: multiple removeFront calls adjust size correctly: FAILED
+- again, remove methods probably are probably not actually removing because
+  isEmpty isn't working properly
+
+Test 24: multiple addBack calls with different types only accepts ints: FAILED
+Test 25: multiple addFront calls with different types only accepts ints: FAILED
+- in combination with tests 8 & 9, makes it pretty clear that size is being
+  incremented before checking precondition, or at the very least size increment
+  is not based on the condition that value is valid
+  
+Test 26: addBack with invalid value will not affect isEmpty: PASSED
+Test 27: addFront with invalid value will not affect isEmpty: PASSED
+- probably just because isEmpty doesn't seem to work at all
+
+Test 28: addBack & addFront actually creates the specified list: FAILED
+- honestly it seems more likely that I'm not using vectors correctly than that
+  the add values aren't working
+
+
+List of Bugs:
+- addBack and addFront need to check precondition before accepting an addBack
+  - should only add if it is a valid int
+  - it may be rejecting the value but still incrementing size
+- isEmpty does not work at all, always returns true
